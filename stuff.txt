@@ -1,0 +1,44 @@
+created 2 folders for frontend and backend
+initialised vite + ts in frontend
+npm init -y in ..
+npm install typescript ts-node nodemon -D
+installed ts as dev dependency, :number doesnt work (can show)
+//https://www.youtube.com/watch?v=vL24eiwAG_g&t=2330s
+
+
+"outDir": "./backend/dist", // Redirect output structure to the directory.
+"rootDir": "./backend"
+for dist folder when deploying backend
+
+ts-node for dev (no compile, faster and for debugging)
+tsc (ts compile) for build in prod enviorment
+
+--ORM (OBJECT RELATION MAPPING)--
+makes node and ts web apps easier to work with a db.
+CLIENT->PRISMA->POSTGRES
+before: SELECT id, name, email, country, phone_number FROM users WHERE id=20;
+after: users.GetById(20)
+prisma.schema file is to be made
+models are tables
+? denotes optional
+-created neondb database and then copied env for prisma
+-init prisma in root directory using npm install prisma @prisma/client
+-init primsa in backend too via npx prisma init
+-created .env in root pasted the string given by neondb, also installed doenv dependency
+-cuid (collision resistant ids), takes up less space than uuid (uuid 36 char, cuid 25 char string & cuid is more human readable)
+-created models and then, in backend, npx prisma db push
+-now everytime prisma.db is changed you need to run this command to sync neon db
+-to utilise prisma client package, created db folder 
+--ORM (OBJECT RELATION MAPPING)--
+
+in root,
+-installed jsonwebtoken, cookie-parser, bcryptjs
+-need middleware to destructure stuff like {password, etc} in auth.controller.ts, so in index.ts used express.json
+-in auth.controller, const user = await prisma.user.findUnique({ where: { username } }); to get user from prisma
+-.salt method take in a numeric value, higher menas longer to gen and thus async
+-https://avatar-placeholder.iran.liara.run/#document for random pfp based on gender
+-in root, jsonwebtoken as dev dependency
+-UTILS, GENERATE token using jwt, JWT_SECRET in .env
+-httpOnly: true, //prevent xss cross site scripting, not accesable by javascript!
+-sameSite: "strict", // CSRF attack cross-site request forgery it means that the cookie will only be sent in requests originating from the same site that set the cookie. This helps prevent CSRF attacks by ensuring that cookies are not sent along with cross-site requests.
+-/*CSRF attacks occur when a malicious website tricks a user's browser into making an unwanted request to another site where the user is authenticated. For example, if a user is logged into their bank account and visits a malicious site, the malicious site could attempt to perform actions on the bank's site usi*/
