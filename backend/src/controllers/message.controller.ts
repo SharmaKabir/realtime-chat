@@ -93,6 +93,7 @@ export  const getMessages = async (req: any, res: any) => {
     }
 };
 // export const getMessages = async (req: any, res: any) => {
+
 //     try {
 //       const { id: userToChatId } = req.params;
 //       const senderId = req.user.id;
@@ -126,3 +127,33 @@ export  const getMessages = async (req: any, res: any) => {
 //       res.status(500).json({ message: "Internal server error" });
 //     }
 //   };
+
+
+
+export const getUsersForSidebar = async (req: any, res: any) => {
+    try {
+      const userId = req.user.id;
+  
+      console.log(`Fetching users for sidebar for user ${userId}`);
+  
+      const users = await prisma.user.findMany({
+        where: {
+          id: {
+            not: userId,
+          },
+        },
+        select: {
+          id: true,
+          username: true,
+          fullName: true,
+          profilePic: true,
+        },
+      });
+  
+      console.log("Users found:", users);
+      res.status(200).json(users);
+    } catch (error: any) {
+      console.error("Error in getUsersForSidebar", error.message);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  };
