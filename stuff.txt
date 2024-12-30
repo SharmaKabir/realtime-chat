@@ -42,3 +42,9 @@ in root,
 -httpOnly: true, //prevent xss cross site scripting, not accesable by javascript!
 -sameSite: "strict", // CSRF attack cross-site request forgery it means that the cookie will only be sent in requests originating from the same site that set the cookie. This helps prevent CSRF attacks by ensuring that cookies are not sent along with cross-site requests.
 -/*CSRF attacks occur when a malicious website tricks a user's browser into making an unwanted request to another site where the user is authenticated. For example, if a user is logged into their bank account and visits a malicious site, the malicious site could attempt to perform actions on the bank's site usi*/
+--ORM (OBJECT RELATION MAPPING)--
+
+
+
+--frontend--
+-for glass morphism: tailwindcss-glassmorphism.vercel.app
