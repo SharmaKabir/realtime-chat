@@ -4,7 +4,7 @@ import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import { useAuthContext } from './context/AuthContext';
 import { Toaster } from 'react-hot-toast';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 function App() {
   const {authUser,isLoading }=useAuthContext();
   console.log(authUser);

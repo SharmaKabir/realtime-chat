@@ -57,3 +57,6 @@ has 2 components: client which runs in browser and socket.io in nodejs
 -client connects to server //socket.on()
 -server ack 
 -client: connection established //socket.on(), io.emit(), io.tio(id).emit()
+
+
+transpiling is when you convert code form one lang to another ex ts to js
