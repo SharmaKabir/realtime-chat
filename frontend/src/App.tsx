@@ -4,21 +4,25 @@ import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import { useAuthContext } from './context/AuthContext';
 import { Toaster } from 'react-hot-toast';
+import Footer from './components/Footer';
 function App() {
   const {authUser,isLoading }=useAuthContext();
   console.log(authUser);
   if(isLoading) return null;
   return (
-    <div className="p-4 h-screen flex items-center justify-center">  
-    <Routes>
-        <Route path='/' element={ authUser ? <Home/> : <Navigate to={"login"}/>} /> 
-        {/* //IF NOT AUTH IMMEDIATLEY GO TO LOGIN */}
-
-        <Route path='/signup' element={!authUser ? <SignUp/>:<Navigate to={"/"}/>} />
-        <Route path='/login' element={!authUser ?<Login/>:<Navigate to={"/"}/>} />
-    </Routes>
-    <Toaster/>
+    <>
+   <div className="flex flex-col min-h-screen">
+      <div className="flex-grow p-4 flex items-center justify-center">
+        <Routes>
+          <Route path='/' element={authUser ? <Home /> : <Navigate to={"login"} />} />
+          <Route path='/signup' element={!authUser ? <SignUp /> : <Navigate to={"/"} />} />
+          <Route path='/login' element={!authUser ? <Login /> : <Navigate to={"/"} />} />
+        </Routes>
+        <Toaster />
+      </div>
+      {/* <Footer /> */}
     </div>
+    </>
   )
 }
 

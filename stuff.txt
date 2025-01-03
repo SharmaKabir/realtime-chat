@@ -50,3 +50,10 @@ in root,
 -for glass morphism: tailwindcss-glassmorphism.vercel.app
 
 -zustanad for global state mgmt
+
+
+-socket io : bidirectional and real time
+has 2 components: client which runs in browser and socket.io in nodejs
+-client connects to server //socket.on()
+-server ack 
+-client: connection established //socket.on(), io.emit(), io.tio(id).emit()
