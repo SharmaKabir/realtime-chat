@@ -48,3 +48,5 @@ in root,
 
 --frontend--
 -for glass morphism: tailwindcss-glassmorphism.vercel.app
+
+-zustanad for global state mgmt
