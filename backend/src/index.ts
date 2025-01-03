@@ -24,13 +24,21 @@ app.use("/api/messages", messageRoutes)
 //     res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
 //    });
 // }
+// if (process.env.NODE_ENV !== "development") {
+//     app.use(express.static(path.join(__dirname, "../../frontend/dist")));
+//     app.get("*", (req, res) => {
+//         res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+//     });
+// }
 if (process.env.NODE_ENV !== "development") {
-    app.use(express.static(path.join(__dirname, "../../frontend/dist")));
+    // Update the path to point to the correct directory on Render
+    const frontendDistPath = path.join(__dirname, "frontend", "dist");
+    app.use(express.static(frontendDistPath));
+    
     app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+        res.sendFile(path.join(frontendDistPath, "index.html"));
     });
 }
-
 server.listen(PORT, ()=>{
     console.log(`${PORT} server is running`);
 })
