@@ -18,11 +18,17 @@ app.use("/api/messages", messageRoutes)
 
 //frontend=>5173
 //backend=>5005
-if(process.env.NODE_ENV!== "development"){
-    app.use(express.static(path.join(__dirname, "/frontend/build")));
-   app.get("*", (req,res)=>{
-    res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
-   });
+// if(process.env.NODE_ENV!== "development"){
+//     app.use(express.static(path.join(__dirname, "/frontend/build")));
+//    app.get("*", (req,res)=>{
+//     res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+//    });
+// }
+if (process.env.NODE_ENV !== "development") {
+    app.use(express.static(path.join(__dirname, "../../frontend/dist")));
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+    });
 }
 
 server.listen(PORT, ()=>{
