@@ -60,3 +60,4 @@ has 2 components: client which runs in browser and socket.io in nodejs
 
 
 transpiling is when you convert code form one lang to another ex ts to js
+https://app.eraser.io/workspace/Y1v9aiudDQ2mJPweY3th
