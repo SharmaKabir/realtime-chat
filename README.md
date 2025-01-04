@@ -124,7 +124,7 @@ enum Gender{
   female
 }
 ```
-##Auth with JWT and Realtime communication with Socket.io
+## Auth with JWT and Realtime communication with Socket.io
 
 ![diagram-export-4-1-2025-5_11_52-pm](https://github.com/user-attachments/assets/ef919785-0d9c-4796-9525-abb9f3c8ffcf)
 <br/>
