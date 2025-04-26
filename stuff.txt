@@ -60,3 +60,143 @@ has 2 components: client which runs in browser and socket.io in nodejs
 
 
 transpiling is when you convert code form one lang to another ex ts to js
+
+
+-------------------------
+SEPM NOTES
+
+Here is the Software Requirements Specification (SRS) and Software Requirements Document (SRD) for your real-time chat application project.
+
+Software Requirements Specification (SRS)
+1. Introduction
+1.1 Purpose
+The purpose of this document is to define the functional and non-functional requirements for the real-time chat application. This application enables users to communicate in real-time, manage conversations, and authenticate securely.
+1.2 Scope
+The real-time chat application is a full-stack web application built using the PERN stack (PostgreSQL, Express, React, Node.js) with TypeScript. It provides real-time messaging, user authentication, and online status tracking. The application is designed to be responsive and user-friendly, with features like gender-based avatars and message history.
+1.3 Definitions, Acronyms, and Abbreviations
+PERN: PostgreSQL, Express, React, Node.js
+JWT: JSON Web Token
+ORM: Object-Relational Mapping
+Socket.IO: A library for real-time, bidirectional communication
+1.4 References
+Socket.IO Documentation
+Prisma Documentation
+React Documentation
+
+2. Overall Description
+2.1 Product Perspective
+The application is a standalone web-based chat system that allows users to communicate in real-time. It uses WebSockets for real-time communication and PostgreSQL for data storage.
+2.2 Product Features
+Real-time messaging with WebSocket support
+User authentication using JWT
+Online/offline status tracking
+Message history and timestamps
+Responsive design with TailwindCSS
+Gender-based avatar generation
+Search functionality for conversations
+2.3 User Classes and Characteristics
+Registered Users: Can log in, send/receive messages, and view message history.
+Guests: Cannot access the application without signing up.
+2.4 Operating Environment
+Frontend: React with Vite, TailwindCSS
+Backend: Node.js with Express, Prisma ORM
+Database: PostgreSQL (hosted on NeonDB)
+Deployment: Render (for hosting backend and frontend)
+2.5 Constraints
+The application must support real-time communication with minimal latency.
+The database must handle concurrent read/write operations efficiently.
+The application must be responsive and work on both desktop and mobile devices.
+2.6 Assumptions and Dependencies
+Users have a stable internet connection.
+The backend server is hosted on Render.
+The database is hosted on NeonDB.
+
+3. Functional Requirements
+3.1 User Authentication
+Users must be able to sign up with a username, password, and gender.
+Users must be able to log in and log out securely.
+Passwords must be hashed using bcrypt.
+3.2 Real-Time Messaging
+Users must be able to send and receive messages in real-time.
+Messages must be stored in the database for future retrieval.
+3.3 Online Status
+Users must be able to see the online/offline status of other users.
+3.4 Search Functionality
+Users must be able to search for conversations by username.
+3.5 Message History
+Users must be able to view the history of messages in a conversation.
+
+4. Non-Functional Requirements
+4.1 Performance
+The application must handle at least 100 concurrent users without significant performance degradation.
+4.2 Security
+All sensitive data must be encrypted.
+JWT must be used for secure authentication.
+Cookies must be HTTP-only and have CSRF protection.
+4.3 Usability
+The application must be responsive and accessible on both desktop and mobile devices.
+4.4 Maintainability
+The codebase must follow modular and reusable design principles.
+TypeScript must be used for type safety.
+
+Software Requirements Document (SRD)
+1. Project Overview
+The real-time chat application is a web-based platform that allows users to communicate in real-time. It is built using the PERN stack and provides features like real-time messaging, user authentication, and online status tracking.
+
+2. Functional Requirements
+Authentication
+Users can sign up, log in, and log out securely.
+Passwords are hashed using bcrypt.
+JWT is used for authentication.
+Messaging
+Users can send and receive messages in real-time.
+Messages are stored in the database for future retrieval.
+Online Status
+Users can see the online/offline status of other users.
+Search
+Users can search for conversations by username.
+Message History
+Users can view the history of messages in a conversation.
+
+3. Non-Functional Requirements
+Performance
+The application must handle at least 100 concurrent users.
+Security
+All sensitive data must be encrypted.
+Cookies must be HTTP-only and have CSRF protection.
+Usability
+The application must be responsive and accessible on both desktop and mobile devices.
+Maintainability
+The codebase must follow modular and reusable design principles.
+
+4. System Design
+Frontend
+React with TypeScript
+Zustand for state management
+TailwindCSS for styling
+Backend
+Node.js with Express
+Prisma ORM for database interaction
+Socket.IO for real-time communication
+Database
+PostgreSQL hosted on NeonDB
+Deployment
+Hosted on Render
+
+5. Use Case Diagram
+Actors: Registered Users
+Use Cases:
+Sign up
+Log in
+Send/receive messages
+View online status
+Search for conversations
+View message history
+
+6. Deployment Diagram
+Frontend: Deployed on Render
+Backend: Deployed on Render
+Database: Hosted on NeonDB
+
+This SRS and SRD provide a comprehensive overview of your project, including its functional and non-functional requirements, system design, and deployment details. Let me know if you need further refinements!
+

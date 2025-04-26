@@ -1,0 +1,42 @@
+what are sockets?
+
+at their core, sockets are abstractions provided by OS to allow communication b/w processes
+act as endpoints bw 2 way communicationchannels
+
+socket= ip address + port number
+
+OSI LAYER
+TRANSPORT LAYER (LAYER 4)
+SOCKET WRAPS INTO TCP/UDP SEGMENTS
+SENDS TO LAYER 3 FOR ROUTING (NETWORK LAYER)
+
+tcp/udp sockets are 2 main types
+
+ON SERVERS SIDE
+socket() : waits for incoming client connection and creates new socket, this one still listens for new conections
+bind() : 
+lsiten() :
+accept() :
+
+CLIENT PROCESS
+3 way handshake SYN, SYN+ACK, ACK
+Process table ( socket descriptor )
+
+After communication,
+close()
+
+every socket identified by 5 tuple:
+1 type (tcp/udp)
+2 local port
+3 local ip
+4 dest port
+5 dest ip
+
+UNIX DOMAIN sockets
+- comm bw process, do not require ip, no overhead, very fast
+- postgres, redis
+
+socket are inhenerlty insecure, TLS (TRANSPORT LAYER SECURITY) is used
+- wraps socket into encypted
+- ssl
+- man in the middle attacks
